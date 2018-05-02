@@ -104,27 +104,8 @@ require([
         _applyRenderer(null);
     });
 
-    //   document.getElementById("controls").addEventListener("click",
-    //     function (event) {
-    //         var edges;
 
-    //         if (event.target.id === "inputSketchEdge") {
-    //             edges = sketchEdges;
-    //         }
-    //         else if (event.target.id === "inputSolidEdge") {
-    //             edges = solidEdges;
-    //         }
-    //         else if (event.target.id === "noEdges") {
-    //             edges = null;
-    //         }
-    //         if (event.target.checked) {
-    //             var renderer = sceneLayer.renderer.clone();
-    //             renderer.symbol.symbolLayers.getItemAt(0).edges = edges;
-    //             sceneLayer.renderer = renderer;
-    //         }
-    //     });
-
-    layerListExpand = new Expand({
+    const layerListExpand = new Expand({
         expandIconClass: "icon-ui-applications",  // see https://developers.arcgis.com/javascript/latest/guide/esri-icon-font/
         // expandTooltip: "Expand LayerList", // optional, defaults to "Expand" for English locale
         view: view,
@@ -132,8 +113,6 @@ require([
     });
 
     view.ui.add(layerListExpand, "top-right");
-
-    // view.ui.add(document.getElementById("controls"), "top-right");
 
     function _toggleCheckboxes( checkboxTrue, checkboxFalse) {
         if(!checkboxTrue.checked){
@@ -151,7 +130,5 @@ require([
         cloneRenderer.symbol.symbolLayers.getItemAt(0).edges = edges;
         sceneLayer.renderer = cloneRenderer;
     }
-
-   
 
 });
