@@ -1,4 +1,4 @@
-# Temperature App
+# Edge Rendering Bucharest
 
 3D WebGIS app that allows the user the apply Edge Rendering on 3D buildings and also to select the type: solid or sketch. 
 Also, the user can choose a color and a size for the edges
