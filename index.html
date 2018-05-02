@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bucharest Edge Rendering</title>
+    <!-- In the head -->
+    <link rel="stylesheet" href="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/css/calcite-web.min.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.7/esri/css/main.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <script type="text/javascript" src="dojoConfig.js"></script>
+    <script defer type="text/javascript" src="https://js.arcgis.com/4.7"></script>
+    <script src="./jscolor-2.0.5/jscolor.js"></script>
+</head>
+
+<body>
+    
+    <div id="viewDiv"></div>
+    <div id="controls" style="display:none">
+        <div class="modifier-class trailer-2 js-tab-group">
+            <nav class="tab-nav">
+                <a class="tab-title is-active js-tab">Solid Edges</a>
+                <a class="tab-title js-tab">Sketch Edges</a>
+                <a class="tab-title js-tab">No Edges</a>
+            </nav>
+            <section class="tab-contents">
+                <article class="tab-section js-tab-section is-active" id="tab1">
+                    <label class="toggle-switch modifier-class">
+                        <input type="checkbox" class="toggle-switch-input" id="inputSolidEdge">
+                        <span class="toggle-switch-track margin-right-1"></span>
+                        <span class="toggle-switch-label font-size--1">Solid Edges</span>
+                    </label>
+                    <div id="sliderSolid">
+                        <p>Drag the slider to set the value for solid edges</p>
+                        <form class="calcite-slider" id="solidEdges">
+                            <label>
+                                <input type="range" min="0" max="100" value="0" step="1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" id="rangeSolid">
+                            </label>
+                        </form>
+                    </div>
+
+                    <div>
+                        <p>Use the color picker to choose a color for solid edges</p>
+                        <input class="jscolor" id="solidColorPicker">
+                    </div>
+                    <button class="btn modifier-class btn-clear" id="btnSolid"> Apply </button>
+                </article>
+
+                <article class="tab-section js-tab-section" id="tab1">
+                    <label class="toggle-switch modifier-class">
+                        <input type="checkbox" class="toggle-switch-input"  id="inputSketchEdge">
+                        <span class="toggle-switch-track margin-right-1"></span>
+                        <span class="toggle-switch-label font-size--1">Sketch Edges</span>
+                    </label>
+                    <div id="sliderSolid">
+                        <p>Drag the slider to set the value for sketch edges</p>
+                        <form class="calcite-slider" id="solidEdges">
+                            <label>
+                                <input type="range" min="0" max="100" value="0" step="1" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" id="rangeSketch">
+                            </label>
+                        </form>
+                    </div>
+                    <div>
+                        <p>Use the color picker to choose a color for solid edges</p>
+                        <input class="jscolor" id="sketchColorPicker">
+                    </div>
+                    <button class="btn modifier-class btn-clear" id="btnSketch"> Apply </button>
+                </article>
+
+                <article class="tab-section js-tab-section">
+                    <label class="toggle-switch modifier-class">
+                        <input type="checkbox" class="toggle-switch-input" id="noEdges">
+                        <span class="toggle-switch-track margin-right-1"></span>
+                        <span class="toggle-switch-label font-size--1">No Edges</span>
+                    </label>
+
+                    <button class="btn modifier-class btn-clear" id="btnNoEdge"> Apply </button>
+                </article>
+            </section>
+        </div>
+    </div>
+
+    
+    
+    <script src="https://s3-us-west-1.amazonaws.com/patterns.esri.com/files/calcite-web/1.0.1/js/calcite-web.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        calcite.init()
+    </script>
+    <script>  
+        $(document).ready(function () {
+            $('#controls').css('display', 'visible');
+            $('#controls').fadeIn(5000);
+        });   
+    </script>
+</body>
+
+</html>
